@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="OWASP Juice Shop Suite" parallel="classes" thread-count="2">
+	<listeners>
+		<listener class-name="Utility.Listeners" />
+		<listener class-name="Utility.AnnotationTransformer" />
+	</listeners>
+
+
+	<test name="Login Feature Tests">
+		<classes>
+			<class name="tests.LoginTest" />
+		</classes>
+	</test>
+
+</suite>
