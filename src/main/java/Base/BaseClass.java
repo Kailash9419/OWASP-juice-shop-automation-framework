@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterClass;
@@ -30,10 +31,20 @@ public class BaseClass {
         
         try {
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver();
+            
+            ChromeOptions options = new ChromeOptions();
+            options.addArguments("--headless=new");
+            options.addArguments("--window-size=1920,1080");
+            options.addArguments("--disable-gpu");
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--remote-allow-origins=*");
+            
+            
+            driver = new ChromeDriver(options);
             logger.info("Chrome Browser launched successfully.");
             
-            driver.manage().window().maximize();
+            //driver.manage().window().maximize();
             driver.get(ConfigReader.get("url"));
             logger.info("Navigated to URL: " + ConfigReader.get("url"));
             
