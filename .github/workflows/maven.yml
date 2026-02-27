@@ -21,8 +21,20 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
+      # Chrome install karne ke baad uska path set karna zaroori hota hai
       - name: Install Chrome
         uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
 
+      # Kabhi-kabhi Linux par display server nahi hota, isliye xvfb use karna safe hai
       - name: Run Tests
-        run: mvn clean test
+        run: xvfb-run mvn clean test
+        
+      # Failure ke waqt reports dekhne ke liye ye step add karein
+      - name: Upload Test Report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: execution-report
+          path: reports/ # Aapka Extent report folder
