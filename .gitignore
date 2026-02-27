@@ -1,0 +1,24 @@
+# Compiled Java files (Binaries)
+*.class
+/target/
+
+# IDE specific files
+.settings/
+.classpath
+.project
+.metadata/
+.idea/
+*.iml
+bin/
+
+# Test Report & Screenshots (Ye har run pe badalte hain, isliye upload nahi karne chahiye)
+/reports/
+/screenshots/
+/logs/
+
+# Log files
+*.log
+
+# Operating System files
+.DS_Store
+Thumbs.db
