@@ -2,9 +2,9 @@ name: Selenium Hybrid Framework CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "master" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "master" ]
 
 jobs:
   test:
@@ -12,17 +12,31 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v3
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
 
       - name: Install Chrome
-        uses: browser-actions/setup-chrome@v1
+        uses: browser-actions/setup-chrome@latest
 
-      - name: Run Tests
+      - name: Run Automated Tests
+        # 'mvn clean test' purani reports delete karke fresh run karega
         run: mvn clean test
+
+      - name: Upload Test Artifacts
+        # 'if: always()' ensures ki pass ho ya fail, reports hamesha upload hon
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: execution-reports-and-screenshots
+          # Aapke project ke folders ka path (Case-sensitive for Linux)
+          path: |
+            screenshots/
+            test-output/
+            reports/
+          retention-days: 5 # 5 din baad automatically delete ho jayega space bachane ke liye
