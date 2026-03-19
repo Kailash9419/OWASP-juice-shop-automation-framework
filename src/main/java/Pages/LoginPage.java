@@ -53,5 +53,21 @@ public class LoginPage {
 		driver.findElement(loginClick).click();
 
 	}
+	
+	// Error message check karne ke liye (Negative Test)
+	public String getErrorMessage() {
+	    By errorMsgLocator = By.xpath("//div[contains(@class, 'error')]");
+	    try {
+            return wait.until(ExpectedConditions.visibilityOfElementLocated(errorMsgLocator)).getText();
+        } catch (Exception e) {
+            return "Error element not found";
+        }
+	}
+
+	// User Profile check karne ke liye (Positive Test)
+	public boolean isUserLoggedIn() {
+	    // Agar login ho gaya toh URL change ho jayega ya 'Account' menu mein email dikhega
+	    return driver.getCurrentUrl().contains("search");
+	}
 
 }

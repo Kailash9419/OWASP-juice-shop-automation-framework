@@ -1,133 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-27T11:13:25 IST" name="Default suite" finished-at="2026-02-27T11:13:32 IST" duration-ms="7039">
+  <suite started-at="2026-03-19T13:54:09 IST" name="Default suite" finished-at="2026-03-19T13:54:23 IST" duration-ms="13524">
     <groups>
     </groups>
-    <test started-at="2026-02-27T11:13:25 IST" name="Default test" finished-at="2026-02-27T11:13:32 IST" duration-ms="7039">
-      <class name="tests.LoginTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.LoginTest@1a9c38eb]" started-at="2026-02-27T11:13:25 IST" name="setup" finished-at="2026-02-27T11:13:28 IST" duration-ms="3318" status="PASS">
+    <test started-at="2026-03-19T13:54:09 IST" name="Default test" finished-at="2026-03-19T13:54:23 IST" duration-ms="13524">
+      <class name="tests.EndtoEndTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.EndtoEndTest@1a9c38eb]" started-at="2026-03-19T13:54:09 IST" name="setup" finished-at="2026-03-19T13:54:13 IST" duration-ms="3848" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyLoginNavigation(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@1a9c38eb]" started-at="2026-02-27T11:13:30 IST" name="verifyLoginNavigation" data-provider="loginData" finished-at="2026-02-27T11:13:30 IST" duration-ms="579" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testuser1234@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Test@123]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="testProductOrderFlow()[pri:0, instance:tests.EndtoEndTest@1a9c38eb]" started-at="2026-03-19T13:54:13 IST" name="testProductOrderFlow" finished-at="2026-03-19T13:54:23 IST" duration-ms="9454" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyLoginNavigation -->
-        <test-method signature="verifyLoginNavigation(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@1a9c38eb]" started-at="2026-02-27T11:13:30 IST" name="verifyLoginNavigation" data-provider="loginData" finished-at="2026-02-27T11:13:30 IST" duration-ms="368" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testuser1234@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Test123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginNavigation -->
-        <test-method signature="verifyLoginNavigation(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@1a9c38eb]" started-at="2026-02-27T11:13:30 IST" name="verifyLoginNavigation" data-provider="loginData" finished-at="2026-02-27T11:13:31 IST" duration-ms="361" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[wrong@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Test@123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginNavigation -->
-        <test-method signature="verifyLoginNavigation(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@1a9c38eb]" started-at="2026-02-27T11:13:31 IST" name="verifyLoginNavigation" data-provider="loginData" finished-at="2026-02-27T11:13:31 IST" duration-ms="310" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Test@123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginNavigation -->
-        <test-method signature="verifyLoginNavigation(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@1a9c38eb]" started-at="2026-02-27T11:13:31 IST" name="verifyLoginNavigation" data-provider="loginData" finished-at="2026-02-27T11:13:31 IST" duration-ms="295" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[testuser1234@gmail.com]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginNavigation -->
-        <test-method signature="verifyLoginNavigation(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@1a9c38eb]" started-at="2026-02-27T11:13:31 IST" name="verifyLoginNavigation" data-provider="loginData" finished-at="2026-02-27T11:13:32 IST" duration-ms="279" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[ OR 1=1--]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Test123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginNavigation -->
-        <test-method signature="verifyLoginNavigation(java.lang.String,java.lang.String)[pri:0, instance:tests.LoginTest@1a9c38eb]" started-at="2026-02-27T11:13:32 IST" name="verifyLoginNavigation" data-provider="loginData" finished-at="2026-02-27T11:13:32 IST" duration-ms="295" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[<script>alert(1)</script>]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Test123]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyLoginNavigation -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginTest@1a9c38eb]" started-at="2026-02-27T11:13:32 IST" name="tearDown" finished-at="2026-02-27T11:13:32 IST" duration-ms="177" status="PASS">
+        </test-method> <!-- testProductOrderFlow -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.EndtoEndTest@1a9c38eb]" started-at="2026-03-19T13:54:23 IST" name="tearDown" finished-at="2026-03-19T13:54:23 IST" duration-ms="152" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- tests.LoginTest -->
+      </class> <!-- tests.EndtoEndTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
