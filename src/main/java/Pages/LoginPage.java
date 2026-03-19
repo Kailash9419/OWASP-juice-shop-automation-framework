@@ -18,11 +18,11 @@ public class LoginPage {
 	// Constructor
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(25));
 	}
 
 	// Locators
-	By accountBtn = By.xpath("//span[text() = \" Account \"]");
+	By accountBtn = By.id("navbarAccount");
 	By loginBtn = By.cssSelector("button[aria-label = 'Go to login page']");
 	By email = By.id("email");
 	By pass = By.id("password");
@@ -31,6 +31,10 @@ public class LoginPage {
 	// Actions
 
 	public void navigateToLoginPage() {
+		
+		 // Ensure page loaded
+	    wait.until(ExpectedConditions.presenceOfElementLocated(By.tagName("body")));
+		
 		if (!driver.getCurrentUrl().contains("login")) {
 			wait.until(ExpectedConditions.elementToBeClickable(accountBtn)).click();
 			wait.until(ExpectedConditions.elementToBeClickable(loginBtn)).click();

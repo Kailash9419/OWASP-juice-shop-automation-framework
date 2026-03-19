@@ -139,3 +139,15 @@
 2026-03-19 13:54:23 [main] INFO  Base.BaseClass - End-to-End Flow Completed Successfully!
 2026-03-19 13:54:23 [main] INFO  Base.BaseClass - Browser session closed.
 2026-03-19 13:54:23 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
+2026-03-19 15:07:17 [main] INFO  Base.BaseClass - **************** Starting Test Setup ****************
+2026-03-19 15:07:20 [main] INFO  Base.BaseClass - Chrome Browser launched successfully.
+2026-03-19 15:07:21 [main] INFO  Base.BaseClass - Navigated to URL: http://localhost:3000
+2026-03-19 15:07:21 [main] INFO  Base.BaseClass - Welcome banner closed successfully.
+2026-03-19 15:07:24 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for testuser1234@gmail.com
+2026-03-19 15:07:25 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for wrong@gmail.com
+2026-03-19 15:07:26 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for 
+2026-03-19 15:07:26 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for testuser1234@gmail.com
+2026-03-19 15:07:27 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for  OR 1=1--
+2026-03-19 15:07:28 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for <script>alert(1)</script>
+2026-03-19 15:07:28 [main] INFO  Base.BaseClass - Browser session closed.
+2026-03-19 15:07:28 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
