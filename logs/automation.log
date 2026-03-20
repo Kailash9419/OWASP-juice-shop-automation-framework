@@ -151,3 +151,20 @@
 2026-03-19 15:07:28 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for <script>alert(1)</script>
 2026-03-19 15:07:28 [main] INFO  Base.BaseClass - Browser session closed.
 2026-03-19 15:07:28 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
+2026-03-19 22:31:39 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - **************** Starting Test Setup ****************
+2026-03-19 22:31:42 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - Chrome Browser launched successfully.
+2026-03-19 22:31:43 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - Navigated to URL: http://localhost:3000
+2026-03-19 22:31:44 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - Welcome banner closed successfully.
+2026-03-19 22:31:44 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - --- Starting Test Execution: testProductOrderFlow ---
+2026-03-19 22:31:44 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - Starting End-to-End Order Flow Test
+2026-03-19 22:31:44 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - Login successful with user: praunnoudelautto-8956@yopmail.com
+2026-03-19 22:31:45 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - Apple Juice added to basket successfully.
+2026-03-19 22:31:46 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - Product verification in cart successful.
+2026-03-19 22:31:46 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - Proceeded to checkout page.
+2026-03-19 22:31:47 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - Address selected successfully
+2026-03-19 22:31:48 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - Payment submitted
+2026-03-19 22:31:49 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - End-to-End Flow Completed Successfully!
+2026-03-19 22:31:49 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - PASSED: Test Case testProductOrderFlow finished successfully.
+2026-03-19 22:31:49 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - Browser session closed.
+2026-03-19 22:31:49 [TestNG-test-Login Feature Tests-1] INFO  Base.BaseClass - **************** Test Execution Finished ****************
+2026-03-19 22:31:49 [main] INFO  Base.BaseClass - --- All Test Cases Finished. Report Flushed. ---

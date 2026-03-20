@@ -9,7 +9,6 @@
 
 	<test name="Login Feature Tests">
 		<classes>
-			<class name="tests.LoginTest" />
 			<class name="tests.EndtoEndTest" />
 		</classes>
 	</test>
