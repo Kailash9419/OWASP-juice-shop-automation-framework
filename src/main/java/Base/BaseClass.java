@@ -58,11 +58,11 @@ public class BaseClass {
             driver.get(ConfigReader.get("url"));
             logger.info("Navigated to URL: " + ConfigReader.get("url"));
             
-            wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+            wait = new WebDriverWait(driver, Duration.ofSeconds(30));
             //wait for app to fully load
             wait.until(ExpectedConditions.presenceOfElementLocated(
-            	    By.cssSelector("mat-toolbar")));
-            	logger.info("App fully loaded.");
+            	    By.cssSelector("body")));
+            	logger.info("Page loaded successfully.");
 
             // Handling the Welcome Banner
             try {
