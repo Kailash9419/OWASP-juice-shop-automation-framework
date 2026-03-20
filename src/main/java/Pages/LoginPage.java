@@ -4,16 +4,22 @@ package Pages;
 
 import java.time.Duration;
 
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 public class LoginPage {
 
 	WebDriver driver;
 	WebDriverWait wait;
+	
+    private static final Logger logger = org.apache.logging.log4j.LogManager.getLogger(LoginPage.class);
+
+
 
 	// Constructor
 	public LoginPage(WebDriver driver) {
@@ -55,6 +61,14 @@ public class LoginPage {
 
 		// 3. Click login
 		driver.findElement(loginClick).click();
+		
+		// 4. ✅ KEY FIX: Wait for redirect to complete before returning
+	    try {
+	        wait.until(ExpectedConditions.urlContains("search"));
+	        	logger.info("Login successful - redirected to dashboard.");
+	    } catch (Exception e) {
+	    		logger.warn("URL did not contain 'search' after login - possible slow redirect.");
+	    }
 
 	}
 	

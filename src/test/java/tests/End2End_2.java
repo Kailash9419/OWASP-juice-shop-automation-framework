@@ -1,5 +1,6 @@
 package tests;
 
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Base.BaseClass;
@@ -16,13 +17,15 @@ public class End2End_2 extends BaseClass {
     // ✅ retryAnalyzer wired properly
     @Test(groups = { "smoke", "regression" }, retryAnalyzer = RetryAnalyzer.class)
     public void loginAndDashboardCheck() {
-        LoginPage loginPage = new LoginPage(driver);
+        
+    	LoginPage loginPage = new LoginPage(driver);
         loginPage.navigateToLoginPage();
         loginPage.login(ConfigReader.get("email"), ConfigReader.get("password"));
-        Assert.assertTrue(
-            driver.getCurrentUrl().contains("search"),
-            "Login failed - Smoke Test Failed!"
-        );
+        
+        // ✅ Wait for URL to update instead of asserting immediately
+        boolean isLoggedIn = wait.until(ExpectedConditions.urlContains("search"));
+        Assert.assertTrue(isLoggedIn, "Login failed - URL did not contain 'search'!");
+
         logger.info("Level 1: Smoke Test Passed");
     }
 
