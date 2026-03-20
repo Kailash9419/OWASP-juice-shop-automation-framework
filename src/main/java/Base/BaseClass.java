@@ -33,16 +33,22 @@ public class BaseClass {
             WebDriverManager.chromedriver().setup();
             
             ChromeOptions options = new ChromeOptions();
-            options.addArguments("--headless=new");
+            options.addArguments("--headless");
             options.addArguments("--window-size=1920,1080");
             options.addArguments("--disable-gpu");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
-            options.addArguments("--remote-allow-origins=*");
+           // options.addArguments("--remote-allow-origins=*");
             
             
             driver = new ChromeDriver(options);
-            logger.info("Chrome Browser launched successfully.");
+            
+            if (driver == null) {
+                throw new RuntimeException("Driver is NULL after initialization!");
+            }
+            
+            logger.info("Driver initialized: " + (driver != null));
+           // logger.info("Chrome Browser launched successfully.");
             
             //driver.manage().window().maximize();
             driver.get(ConfigReader.get("url"));
@@ -61,7 +67,8 @@ public class BaseClass {
             }
             
         } catch (Exception e) {
-            logger.error("Failed to initialize the driver setup: " + e.getMessage());
+        	logger.error("Failed to initialize the driver setup", e);
+            throw new RuntimeException("Driver initialization failed", e);
         }
     }
 

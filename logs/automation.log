@@ -165,3 +165,9 @@
 2026-03-20 12:00:12 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for <script>alert(1)</script>
 2026-03-20 12:00:13 [main] INFO  Base.BaseClass - Browser session closed.
 2026-03-20 12:00:13 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
+2026-03-20 12:21:42 [main] INFO  Base.BaseClass - **************** Starting Test Setup ****************
+2026-03-20 12:21:46 [main] INFO  Base.BaseClass - Driver initialized: true
+2026-03-20 12:21:47 [main] INFO  Base.BaseClass - Navigated to URL: http://localhost:3000
+2026-03-20 12:21:47 [main] INFO  Base.BaseClass - Welcome banner closed successfully.
+2026-03-20 12:21:49 [main] INFO  Base.BaseClass - Browser session closed.
+2026-03-20 12:21:49 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
