@@ -1,6 +1,5 @@
 package tests;
 
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import Base.BaseClass;
@@ -14,33 +13,35 @@ import Utility.RetryAnalyzer;
 
 public class End2End_2 extends BaseClass {
 
-    // ✅ retryAnalyzer wired properly
-    @Test(groups = { "smoke", "regression" }, retryAnalyzer = RetryAnalyzer.class)
+    @Test(groups = {"smoke", "regression"}, retryAnalyzer = RetryAnalyzer.class)
     public void loginAndDashboardCheck() {
-        
-    	LoginPage loginPage = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
         loginPage.navigateToLoginPage();
         loginPage.login(ConfigReader.get("email"), ConfigReader.get("password"));
-        
-        // ✅ Wait for URL to update instead of asserting immediately
-        boolean isLoggedIn = wait.until(ExpectedConditions.urlContains("search"));
-        Assert.assertTrue(isLoggedIn, "Login failed - URL did not contain 'search'!");
-
+        boolean isLoggedIn = wait.until(
+            org.openqa.selenium.support.ui.ExpectedConditions.urlContains("search"));
+        Assert.assertTrue(isLoggedIn, "Login failed!");
         logger.info("Level 1: Smoke Test Passed");
     }
 
-    // ✅ retryAnalyzer added here too
-    // ✅ dependsOnMethods kept but alwaysRun = false (default) is fine
-    @Test(
-        groups = { "regression" },
-        dependsOnMethods = "loginAndDashboardCheck",
-        retryAnalyzer = RetryAnalyzer.class
-    )
+    @Test(groups = {"regression"}, retryAnalyzer = RetryAnalyzer.class)
+    // ✅ Removed dependsOnMethods — each test is now independent
+    // ✅ Each test does its own login so retry always starts fresh
     public void productBasketAndCheckoutFlow() {
+
+        // ✅ Login first — don't depend on previous test's session
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.navigateToLoginPage();
+        loginPage.login(ConfigReader.get("email"), ConfigReader.get("password"));
+        wait.until(org.openqa.selenium.support.ui.ExpectedConditions.urlContains("search"));
+        logger.info("Login successful for checkout flow.");
+
+        // Product Search & Add
         ProductPage productPage = new ProductPage(driver);
         productPage.searchForProduct("Apple Juice");
         productPage.addProductToBasket("Apple Juice");
 
+        // Basket Validation
         BasketPage basketPage = new BasketPage(driver);
         basketPage.navigateToCart();
         Assert.assertTrue(
@@ -49,6 +50,7 @@ public class End2End_2 extends BaseClass {
         );
         basketPage.clickCheckout();
 
+        // Address & Payment
         AddressPage addressPage = new AddressPage(driver);
         addressPage.addNewAddress(
             "India", "Test User", "9876543210",
@@ -64,6 +66,6 @@ public class End2End_2 extends BaseClass {
             payPage.getConfirmationMessage().contains("Thank you"),
             "Order failed!"
         );
-        logger.info("Level 2/3: Full Regression Flow Completed Successfully!");
+        logger.info("Level 2/3: Full Regression Flow Completed!");
     }
 }
