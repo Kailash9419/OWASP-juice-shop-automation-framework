@@ -116,3 +116,52 @@
 2026-03-20 11:56:27 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for <script>alert(1)</script>
 2026-03-20 11:56:27 [main] INFO  Base.BaseClass - Browser session closed.
 2026-03-20 11:56:27 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
+2026-03-20 11:59:42 [main] INFO  Base.BaseClass - **************** Starting Test Setup ****************
+2026-03-20 11:59:45 [main] INFO  Base.BaseClass - Chrome Browser launched successfully.
+2026-03-20 11:59:46 [main] INFO  Base.BaseClass - Navigated to URL: http://localhost:3000
+2026-03-20 11:59:48 [main] INFO  Base.BaseClass - Welcome banner closed successfully.
+2026-03-20 11:59:49 [main] INFO  Base.BaseClass - PASS: Login successful as expected.
+2026-03-20 11:59:50 [main] INFO  Base.BaseClass - Browser session closed.
+2026-03-20 11:59:50 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
+2026-03-20 11:59:50 [main] INFO  Base.BaseClass - **************** Starting Test Setup ****************
+2026-03-20 11:59:50 [main] INFO  Base.BaseClass - Chrome Browser launched successfully.
+2026-03-20 11:59:51 [main] INFO  Base.BaseClass - Navigated to URL: http://localhost:3000
+2026-03-20 11:59:52 [main] INFO  Base.BaseClass - Welcome banner closed successfully.
+2026-03-20 11:59:55 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for praunnoudelautto-8956@yopmail.com
+2026-03-20 11:59:55 [main] INFO  Base.BaseClass - Browser session closed.
+2026-03-20 11:59:55 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
+2026-03-20 11:59:55 [main] INFO  Base.BaseClass - **************** Starting Test Setup ****************
+2026-03-20 11:59:56 [main] INFO  Base.BaseClass - Chrome Browser launched successfully.
+2026-03-20 11:59:56 [main] INFO  Base.BaseClass - Navigated to URL: http://localhost:3000
+2026-03-20 11:59:58 [main] INFO  Base.BaseClass - Welcome banner closed successfully.
+2026-03-20 11:59:59 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for wrong@gmail.com
+2026-03-20 11:59:59 [main] INFO  Base.BaseClass - Browser session closed.
+2026-03-20 11:59:59 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
+2026-03-20 11:59:59 [main] INFO  Base.BaseClass - **************** Starting Test Setup ****************
+2026-03-20 12:00:00 [main] INFO  Base.BaseClass - Chrome Browser launched successfully.
+2026-03-20 12:00:01 [main] INFO  Base.BaseClass - Navigated to URL: http://localhost:3000
+2026-03-20 12:00:01 [main] INFO  Base.BaseClass - Welcome banner closed successfully.
+2026-03-20 12:00:02 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for   
+2026-03-20 12:00:02 [main] INFO  Base.BaseClass - Browser session closed.
+2026-03-20 12:00:02 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
+2026-03-20 12:00:02 [main] INFO  Base.BaseClass - **************** Starting Test Setup ****************
+2026-03-20 12:00:03 [main] INFO  Base.BaseClass - Chrome Browser launched successfully.
+2026-03-20 12:00:04 [main] INFO  Base.BaseClass - Navigated to URL: http://localhost:3000
+2026-03-20 12:00:04 [main] INFO  Base.BaseClass - Welcome banner closed successfully.
+2026-03-20 12:00:05 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for testuser1234@gmail.com
+2026-03-20 12:00:06 [main] INFO  Base.BaseClass - Browser session closed.
+2026-03-20 12:00:06 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
+2026-03-20 12:00:06 [main] INFO  Base.BaseClass - **************** Starting Test Setup ****************
+2026-03-20 12:00:06 [main] INFO  Base.BaseClass - Chrome Browser launched successfully.
+2026-03-20 12:00:07 [main] INFO  Base.BaseClass - Navigated to URL: http://localhost:3000
+2026-03-20 12:00:07 [main] INFO  Base.BaseClass - Welcome banner closed successfully.
+2026-03-20 12:00:09 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for  OR 1=1--
+2026-03-20 12:00:09 [main] INFO  Base.BaseClass - Browser session closed.
+2026-03-20 12:00:09 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
+2026-03-20 12:00:09 [main] INFO  Base.BaseClass - **************** Starting Test Setup ****************
+2026-03-20 12:00:10 [main] INFO  Base.BaseClass - Chrome Browser launched successfully.
+2026-03-20 12:00:10 [main] INFO  Base.BaseClass - Navigated to URL: http://localhost:3000
+2026-03-20 12:00:11 [main] INFO  Base.BaseClass - Welcome banner closed successfully.
+2026-03-20 12:00:12 [main] INFO  Base.BaseClass - PASS: System correctly blocked invalid login for <script>alert(1)</script>
+2026-03-20 12:00:13 [main] INFO  Base.BaseClass - Browser session closed.
+2026-03-20 12:00:13 [main] INFO  Base.BaseClass - **************** Test Execution Finished ****************
