@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Surefire suite]" verbose="0">
-  <test thread-count="5" name="Surefire test(failed)" verbose="0">
+<suite thread-count="2" parallel="classes" name="Failed suite [Juice Shop - Full Regression]" guice-stage="DEVELOPMENT" verbose="0">
+  <listeners>
+    <listener class-name="Utility.Listeners"/>
+    <listener class-name="Utility.AnnotationTransformer"/>
+  </listeners>
+  <test thread-count="2" parallel="classes" name="End to End Regression(failed)" verbose="0">
+    <groups>
+      <run>
+        <include name="regression"/>
+      </run>
+    </groups>
     <classes>
-      <class name="tests.LoginTest">
+      <class name="tests.End2End_2">
         <methods>
-          <include name="verifyLoginNavigation"/>
-          <include name="tearDown"/>
-          <include name="setup"/>
+          <include name="loginAndDashboardCheck"/>
+          <include name="productBasketAndCheckoutFlow"/>
         </methods>
-      </class> <!-- tests.LoginTest -->
+      </class> <!-- tests.End2End_2 -->
     </classes>
-  </test> <!-- Surefire test(failed) -->
-</suite> <!-- Failed suite [Surefire suite] -->
+  </test> <!-- End to End Regression(failed) -->
+</suite> <!-- Failed suite [Juice Shop - Full Regression] -->

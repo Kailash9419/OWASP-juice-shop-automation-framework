@@ -25,8 +25,12 @@ public class BaseClass {
     // Logger initialization - Log4j2
     public static final Logger logger = LogManager.getLogger(BaseClass.class);
     
-    @BeforeMethod
+    @BeforeMethod(alwaysRun = true)
     public void setup() {
+    	
+    	//safety guard
+    	resetDriver();
+    	
         logger.info("**************** Starting Test Setup ****************");
         
         try {
@@ -72,7 +76,7 @@ public class BaseClass {
         }
     }
 
-    @AfterMethod
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         if (driver != null) {
             driver.quit();
@@ -80,4 +84,24 @@ public class BaseClass {
         }
         logger.info("**************** Test Execution Finished ****************");
     }
+    
+    //reset the driver in case of retry
+    public void resetDriver() {
+        if (driver != null) {
+            try { 
+                driver.quit(); 
+            } catch (Exception ignored) {}
+            driver = null;
+            logger.info("Driver reset for retry.");
+        }
+    }
+    
+    // ✅ Add this getter in BaseClass.java
+    public WebDriver getDriver() {
+        return driver;
+    }
+
+    
+    
+    
 }

@@ -7,20 +7,21 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import Base.BaseClass;
 
-public class Listeners extends BaseClass implements ITestListener {
-	
-    // Extent report initialize
-    ExtentReports extent = ExtentManager.createInstance();
+public class Listeners implements ITestListener { // ✅ Removed extends BaseClass
     
-    // ThreadLocal ensures tests don't overwrite each other during parallel execution
-    ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>(); 
+    private static final Logger logger = LogManager.getLogger(Listeners.class); // ✅ Own logger
+    
+    ExtentReports extent = ExtentManager.createInstance();
+    ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
 
     @Override
     public void onTestStart(ITestResult result) {
         ExtentTest test = extent.createTest(result.getMethod().getMethodName());
-        extentTest.set(test); // Store the test object for the current thread
+        extentTest.set(test);
         logger.info("--- Starting Test Execution: " + result.getName() + " ---");
     }
 
@@ -34,16 +35,22 @@ public class Listeners extends BaseClass implements ITestListener {
     public void onTestFailure(ITestResult result) {
         extentTest.get().log(Status.FAIL, "Test Failed: " + result.getThrowable());
         logger.error("FAILED: Test Case " + result.getName() + " encountered an error.");
-
+        
         try {
-            // Best practice: Get driver from the result instance to avoid nulls
-            WebDriver driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
-            
-            String screenshotPath = ScreenshotUtils.captureScreenshot(driver, result.getName());
-            
-            // Adding screenshot to report
-            extentTest.get().addScreenCaptureFromPath(screenshotPath, "Failure Screenshot");
-            logger.info("Screenshot captured successfully at: " + screenshotPath);
+            // ✅ Correct way — cast instance to BaseClass directly
+            Object instance = result.getInstance();
+            if (instance instanceof BaseClass) {
+                BaseClass baseInstance = (BaseClass) instance;
+                WebDriver driver = baseInstance.getDriver(); // ✅ Use a public getter
+                
+                if (driver != null) {
+                    String screenshotPath = ScreenshotUtils.captureScreenshot(driver, result.getName());
+                    extentTest.get().addScreenCaptureFromPath(screenshotPath, "Failure Screenshot");
+                    logger.info("Screenshot captured at: " + screenshotPath);
+                } else {
+                    logger.warn("Driver is null — skipping screenshot.");
+                }
+            }
         } catch (Exception e) {
             logger.error("Exception while taking screenshot: " + e.getMessage());
         }
@@ -51,7 +58,7 @@ public class Listeners extends BaseClass implements ITestListener {
 
     @Override
     public void onFinish(ITestContext context) {
-        extent.flush(); 
+        extent.flush();
         logger.info("--- All Test Cases Finished. Report Flushed. ---");
     }
 }

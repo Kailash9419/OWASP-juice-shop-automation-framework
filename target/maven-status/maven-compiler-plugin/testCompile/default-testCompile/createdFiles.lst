@@ -1,1 +1,4 @@
+tests\End2End_2.class
 tests\LoginTest.class
+dataprovider\LoginDataProvider.class
+tests\EndtoEndTest.class

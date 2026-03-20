@@ -1,6 +1,15 @@
 C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Base\BaseClass.java
-C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Pages\HomePage.java
+C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Pages\AddressPage.java
+C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Pages\BasketPage.java
+C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Pages\CheckoutPage.java
 C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Pages\LoginPage.java
+C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Pages\PaymentPage.java
+C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Pages\ProductPage.java
+C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Pages\RegistrationPage.java
+C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Utility\AnnotationTransformer.java
 C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Utility\ConfigReader.java
 C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Utility\ExcelUtils.java
+C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Utility\ExtentManager.java
+C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Utility\Listeners.java
+C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Utility\RetryAnalyzer.java
 C:\Users\kaila\eclipse-workspace\JuiceShopAutomation\src\main\java\Utility\ScreenshotUtils.java

@@ -1,3 +1,15 @@
-Pages\LoginPage.class
-Pages\HomePage.class
+Utility\Listeners.class
+Pages\PaymentPage.class
+Pages\CheckoutPage.class
+Utility\ExtentManager.class
+Utility\RetryAnalyzer.class
+Utility\ExcelUtils.class
 Base\BaseClass.class
+Pages\BasketPage.class
+Pages\ProductPage.class
+Utility\ConfigReader.class
+Utility\ScreenshotUtils.class
+Pages\RegistrationPage.class
+Pages\AddressPage.class
+Pages\LoginPage.class
+Utility\AnnotationTransformer.class
