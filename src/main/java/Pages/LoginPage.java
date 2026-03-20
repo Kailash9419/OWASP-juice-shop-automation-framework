@@ -18,7 +18,7 @@ public class LoginPage {
 	// Constructor
 	public LoginPage(WebDriver driver) {
 		this.driver = driver;
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(25));
+		this.wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 	}
 
 	// Locators
@@ -71,7 +71,12 @@ public class LoginPage {
 	// User Profile check karne ke liye (Positive Test)
 	public boolean isUserLoggedIn() {
 	    // Agar login ho gaya toh URL change ho jayega ya 'Account' menu mein email dikhega
-	    return driver.getCurrentUrl().contains("search");
+		try {
+	        return wait.until(ExpectedConditions.urlContains("search"));
+	    } catch (Exception e) {
+	        return false;
+	    }
+	    
 	}
 
 }

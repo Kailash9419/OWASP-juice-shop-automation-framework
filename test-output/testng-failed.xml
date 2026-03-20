@@ -5,7 +5,7 @@
     <classes>
       <class name="tests.LoginTest">
         <methods>
-          <include name="verifyLoginNavigation" invocation-numbers="0"/>
+          <include name="verifyLoginNavigation" invocation-numbers="0 3 4"/>
           <include name="tearDown"/>
           <include name="setup"/>
         </methods>

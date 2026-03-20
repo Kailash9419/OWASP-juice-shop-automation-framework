@@ -7,9 +7,9 @@
 	</listeners>
 
 
-	<test name="Login Feature Tests">
+	<test name="End to End script">
 		<classes>
-			<class name="tests.EndtoEndTest" />
+			<class name="tests.End2End_2" />
 		</classes>
 	</test>
 

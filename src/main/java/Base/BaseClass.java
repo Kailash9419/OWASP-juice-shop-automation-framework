@@ -10,8 +10,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import Utility.ConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -25,7 +25,7 @@ public class BaseClass {
     // Logger initialization - Log4j2
     public static final Logger logger = LogManager.getLogger(BaseClass.class);
     
-    @BeforeClass
+    @BeforeMethod
     public void setup() {
         logger.info("**************** Starting Test Setup ****************");
         
@@ -48,7 +48,7 @@ public class BaseClass {
             driver.get(ConfigReader.get("url"));
             logger.info("Navigated to URL: " + ConfigReader.get("url"));
             
-            wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+            wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 
             // Handling the Welcome Banner
             try {
@@ -65,7 +65,7 @@ public class BaseClass {
         }
     }
 
-    @AfterClass
+    @AfterMethod
     public void tearDown() {
         if (driver != null) {
             driver.quit();
